@@ -12,15 +12,19 @@ namespace RecursosHumanos
         //el salario, el nombre, el género y la cedula
         private double Salario;
         private string Nombre;
-        private char Genero;
+        private string Genero;
         private string Cedula;
 
-        public Empleado(double salario, string nombre, char genero, string cedula)
+        public Empleado(double salario, string nombre, string genero, string cedula)
         {
             this.Salario = salario;
             this.Nombre = nombre;
             this.Genero = genero;
             this.Cedula = cedula;
+        }
+
+        public Empleado()
+        {
         }
 
         public double getsalario
@@ -31,7 +35,7 @@ namespace RecursosHumanos
         public string Cedula1 { get => Cedula; set => Cedula = value; }
         public double Salario1 { get => Salario; set => Salario = value; }
         public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public char Genero1 { get => Genero; set => Genero = value; }
+        public string Genero1 { get => Genero; set => Genero = value; }
 
         static void Mensaje(double Salario1, string Nombre1, char Genero1, string Cedula1)
         {
@@ -50,6 +54,26 @@ namespace RecursosHumanos
                    Salario1 == empleado.Salario1 &&
                    Nombre1 == empleado.Nombre1 &&
                    Genero1 == empleado.Genero1;
+        }
+
+        public static Empleado MenorSalario(Empleado empleado1,Empleado empleado2, double Salario)//cloanr el objeto (se usa empleado1 como pibote)
+        {
+            if (empleado1.Salario1 < Salario)
+            {
+                Empleado empleadoAux = new Empleado(empleado1.Salario1, empleado1.Nombre1, empleado1.Genero1, empleado1.Cedula1);
+                return empleadoAux;
+            }
+            return empleado2;
+        }
+
+        public static Empleado MayorSalario(Empleado empleado1, Empleado empleado3, double Salario)//cloanr el objeto (se usa empleado1 como pibote)
+        {
+            if (empleado1.Salario1 > Salario)
+            {
+                Empleado empleadoAux = new Empleado(empleado1.Salario1, empleado1.Nombre1, empleado1.Genero1, empleado1.Cedula1);
+                return empleadoAux;
+            }
+            return empleado3;
         }
     }
 
